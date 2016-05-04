@@ -1,7 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  gmail_username: 'nanoaguayo93@gmail.com'
-  gmail_password: 'nano1993'
+  gmail_username: 'aguayosapunar@gmail.com'
+  gmail_password: 'proyecto2016'
   # Code is not reloaded between requests.
   config.cache_classes = true
 
