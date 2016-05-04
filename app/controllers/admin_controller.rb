@@ -37,24 +37,24 @@ class AdminController < ApplicationController
 	#Para crear
 
 	def new
-		user = User.where(id: session[:user_id]).first
-		if user == nil 
-			redirect_to admin_path
-		elsif user.admin==0
-			redirect_to root_path
-		end
+		#user = User.where(id: session[:user_id]).first
+		#if user == nil 
+		#	redirect_to admin_path
+		#elsif user.admin==0
+		#	redirect_to root_path
+		#end
 		@user = User.new
 		
 	end
 	
 	def create
 
-		user = User.where(id: session[:user_id]).first
-		if user == nil 
-			redirect_to admin_path
-		elsif user.admin==0
-			redirect_to root_path
-		end
+		#user = User.where(id: session[:user_id]).first
+		#if user == nil 
+		#	redirect_to admin_path
+		#elsif user.admin==0
+		#	redirect_to root_path
+		#end
 
 		username = params[:username]
 		password = params[:password]
@@ -62,7 +62,7 @@ class AdminController < ApplicationController
 		apellido = params[:lastname]
 		email = params[:email]
 		password_confirmation = params[:password_confirmation]
-		admin=0
+		admin=1
 		blocked=0
 
 	  	@user = User.new(:username => username, :password => password, :name => nombre, :lastname => apellido, :mail => email, :admin => admin, :blocked => blocked)    
