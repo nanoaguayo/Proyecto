@@ -1,0 +1,46 @@
+<div>
+	<h1>Edición de usuario</h1>
+</div>
+<p class="pad-left"> Solo se cambiaran los datos que sean rellenados y que además cumplan con los requisitos.</p>
+
+<div class: "Sign_Form">
+  	<%= form_tag admin_makeedition_path %>
+  		<table style= "width:100%">
+			<tr>
+				<td class="mensaje"> <%= @error %> </td>
+			</tr>  
+			<tr>
+				<td class="mensaje"> <%= @mensaje_username %> </td>
+			</tr>
+			<tr>
+				<td class="mensaje"> <%= @mensaje_name %> </td>
+			</tr>
+			<tr>
+				<td class="mensaje"> <%= @mensaje_lastname %> </td>
+			</tr>
+			<tr>
+				<td class="mensaje"> <%= @mensaje_email %> </td>
+			</tr>
+		</table>
+		<div class="form-control">
+	      <p> Usuario a editar:</br> <%= text_field_tag(:username, nil, placeholder: "Ingrese username.") %> </p>
+	    </div>
+	    </br>
+	    <div class="form-control">
+	      <p> Username nuevo:</br> <%= text_field_tag(:username2, nil, placeholder: "Entre 3 a 20 caracteres.") %> </p>
+	    </div>
+	    <div class="form-control">
+	    	<p> Nombre nuevo:</br> <%= text_field_tag(:name, nil, placeholder:"Ingrese nuevo Nombre.") %> </p>
+	    </div>
+	    <div class="form-control">
+	    	<p> Apellido nuevo:</br> <%= text_field_tag(:lastname, nil,placeholder: "Ingrese nuevo Apellido.") %></p>
+	    </div>
+	    <div class="form-control">
+	    	<p> Email nuevo:</br> <%= text_field_tag(:mail, nil,placeholder: "Debe cumplir x@x.xx") %> </p>
+	    </div>
+	<div class="form-control">
+	  <%= submit_tag("Editar") %>
+	</div>
+
+</div>
+		

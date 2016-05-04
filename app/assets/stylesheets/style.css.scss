@@ -1,0 +1,506 @@
+/*Estructura*/
+html {
+  
+  height: 100%;
+}
+body {
+  
+  height: 90%;
+}
+
+.be-red{
+  
+  font-weight: bold;
+  color: red;
+}
+
+.pad-left{
+  padding-left: 3em;
+}
+.pad-left2{
+  padding-left: 36%;
+}
+
+
+main {
+
+  background: #fff;
+  width: 60%;
+  min-height: 100%;
+  margin: 0 auto;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  height: 100%;
+}
+
+.main{
+
+  display: inline-block;
+  background: #fff;
+  width: 60%;
+  min-height: 100%;
+  margin: 0 auto;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  float: left;
+
+}
+
+header{
+  margin: 0;
+  height:10%;
+  
+}
+
+/*END*/
+
+/*Para menu*/
+
+.menu{
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    background-position: top;
+
+}
+
+
+.menu-item{
+    text-align: center;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 30px 30px;
+    text-decoration: none;
+    float: left;
+}
+
+.menu-ingresar{
+    text-align: center;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 30px 30px;
+    text-decoration: none;
+    float: right;
+}
+
+.active-menu-ingresar{
+    background-color:orange;
+    text-align: center;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 30px 30px;
+    text-decoration: none;
+    float: right;
+}
+
+.active-menu-item{
+    background-color: orange;
+    text-align: center;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 30px 30px;
+    text-decoration: none;
+    float: left;
+}
+
+
+
+/*end menu*/
+
+/*Admin*/
+/*Menu lateral admin*/
+
+.admin-menu{
+
+  padding: 10% 0;
+  float: left;
+  width: 20%;
+  display: inline-block;
+  margin: 0 auto;
+  height: 100%;
+  
+
+}
+
+.admin-side{
+
+  padding: 1em 0em; 
+  width: 100%;
+  background-color:#C0C0C0;
+  color: #303030;
+  border: 1px solid black;
+  text-align: center;
+  width: 85%;
+  margin:0 1.4em;
+}
+
+section a{
+  color:#303030;
+  text-decoration: none;
+
+}
+
+.mensaje{
+  color: red;
+  font-weight: bold;
+  padding-left: 20%;
+}
+
+/*menu lateral*/
+
+/*FORMS*/
+.Sign_Form{
+  width: 100%;
+  display: block;
+}
+
+.form-control{
+  font-weight: bold;
+  display: block;
+  width: 40%;
+  padding: 0 20%
+
+}
+
+/*FORMS*/
+
+/*Listado de usuarios*/
+.user-info{
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.user-info-container{
+  border-top:1px solid black;
+  border-bottom:1px solid black;
+  width: 100%;
+  display: block;
+  margin-top: 1em;
+  padding-bottom: 3em;
+  padding-top: 3em;
+
+}
+
+/*Listado de usuarios*/
+
+/*Texto e interiores*/
+.welcome-admin{
+  margin: 0 5%;
+}
+
+/*Texto e interiores*/
+
+
+/*estilos transversales a la pagina */
+body {
+  margin: 0;
+  background: #ddd;
+  font-size: 14px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+li a{
+  color:white;
+  text-decoration: none;
+}
+li a:hover {
+  color: gray;
+  
+}
+
+
+
+h1{
+  color: black;
+  text-align: center;
+  border-bottom: 3px solid black;
+  padding-top: 7%;
+  padding-left: 3%;
+  margin-bottom: 5%;
+}
+
+footer{
+  font-size: 10px;
+  color:gray;
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid gray;
+  padding-bottom: 20px;
+  margin-top: 30%;
+}
+
+.subsection-link{
+  font-size: large;
+  background-color: black;
+  color: white;
+  display: block;
+  width: 30%;
+  text-align: center;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  margin-bottom: 2%;
+  margin-left: 50%;
+
+}
+
+.catalogo{
+  margin-top: 10%;
+}
+
+/*END*/
+/*MANEJO DE FOTOS EN CATALOGO DE PRODUCTO/OFERTAS*/
+
+.photo{
+  margin-left: 2.1%;
+  margin-bottom: 3%;
+  border: 1px solid black;
+  height: 30%;
+  width: 30%;
+  display: inline-block;
+
+}
+
+.photo2{
+  margin-left: 4%;
+  margin-bottom: 3%;
+  border: 3px double black;
+  height: 50%;
+  width: 90%;
+  display: inline-block;
+
+}
+
+.pic{
+
+  margin-left: 20%;
+  margin-right: 12%;
+  margin-top: 5px;
+  max-height:70%;
+  max-width: 80%;
+
+}
+
+img{
+  margin-left: 12%;
+  margin-right: 12%;
+  margin-top: 5px;
+  max-height:70%;
+  max-width: 80%;
+}
+
+.description{
+  text-align: center;
+  margin-top: 1px;
+  display: block;
+  color:black;
+  font-style: italic;
+}
+
+.description2{
+  text-align: center;
+  font-size: large;
+  margin-top: 1px;
+  display: block;
+  color:black;
+  font-style: italic;
+  font-weight: bold;
+}
+.price{
+  text-align: center;
+  margin-top: 1px;
+  display: block;
+  color:red;
+  font-weight: bold;
+}
+
+/*PRECIO OFERTAS*/
+.price3-back{
+  text-align: right;
+  margin-top: 1px;
+  display: inline-block;
+  color:gray;
+  font-style: italic;
+  font-size: large;
+  text-decoration: line-through;
+  width: 50%;
+  float: left;
+}
+.price3{
+  font-size: large;
+  text-align: left;
+  margin-top: 1px;
+  display: inline-block;
+  color:red;
+  font-weight: bold;
+  width: 50%;
+  float: right;
+}
+
+/*PARA MOSTRAR ITEM ESPECIFICO*/
+
+.price2{
+  font-size: large;
+  text-align: center;
+  margin-top: 1px;
+  display: block;
+  color:red;
+  font-weight: bold;
+}
+
+
+.item1{
+  border: 2px solid black;
+  margin-left: 13%;
+  margin-top: 10%;
+}
+
+.descripcion{
+  text-align: center;
+}
+.descripcion-body{
+  font-style: italic;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
+  padding-top: 2%;
+}
+
+.descripcion-title{
+  font-weight: bold; 
+  border-bottom: 3px solid orange;
+}
+.itemcontainer{
+  margin-bottom: 3px;
+}
+
+/*BOTON PARA VOLVER EN itemX.html*/
+
+.back{
+  margin-left: 47%;
+  background-color: black;
+  color: white;
+  border: 2px solid gray;
+  display: inline-block;
+  padding: 7px;
+  margin-top: 10%;
+
+}
+
+.back a{
+  color: white;
+}
+
+/*PAGINACION*/
+
+.page-selector{
+
+
+  display: block;
+  width: 50%;
+  margin-left: 48%;
+  
+}
+
+.page-number{
+
+  display: inline-block;
+  border: 1px solid black;
+  color: black;
+  padding: 4px;
+}
+
+.page-number-active{
+
+  display: inline-block; 
+  border: 1px solid black;
+  color: black;
+  padding: 4px;
+  background-color: orange;
+}
+.page-number a{
+  color:black;
+}
+.page-number-active a{
+  color:white;
+}
+
+@media screen and (max-width:530px){
+
+    .photo{
+      width: 80%;
+    }
+
+    .active-menu-item, .menu-item{
+      padding: 10px 10px;
+
+    }
+
+  .subsection-link{
+    font-size: medium;
+    background-color: black;
+    color: white;
+    display: block;
+    width: 80%;
+    text-align: center;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    margin-bottom: 2%;
+    margin-left: 2%;
+
+  }
+  h1{
+    font-size: medium;
+  }
+
+  .item1{
+    height: 50%;
+  }
+
+  .photo2{
+
+    height: 20%;
+    float: left;
+  }
+
+}
+
+@media screen and (max-width:800px) and (min-width: 530px){
+
+    .photo{
+      width: 45%;
+    }
+
+  .subsection-link{
+    font-size: large;
+    background-color: black;
+    color: white;
+    display: block;
+    width: 50%;
+    text-align: center;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    margin-bottom: 2%;
+    margin-left: 20%;
+
+  }
+  
+}
+
+#remember{
+
+  font-weight: bold;
+  color: red;
+  padding-left: 20%;
+
+}

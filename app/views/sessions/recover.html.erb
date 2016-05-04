@@ -1,0 +1,18 @@
+<div>
+	<h1>Log in</h1>
+</div>
+<div class="pad-left">
+	<p class="be-red pad-left">* <%= @message %> </br></p>
+  	<p>Ingrese su usuario y se enviara la contrasena a su correo electronico registrado</p>
+</div>
+<div class= "Sign_Form pad-left2">
+ 
+  <%= form_tag(:action => 'sendpass') do %>
+  	  	</br>
+    <p>Ingrese usuario:</br> <%= text_field_tag(:username, nil, placeholder: "Ingrese username") %></p> 
+    
+    <%= submit_tag("Enviar contrasena a correo") %>
+   
+  <% end %>
+
+</div>

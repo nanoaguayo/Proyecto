@@ -1,0 +1,23 @@
+<div>
+	<h1>Iniciar Sesion Administrador</h1>
+</div>
+<%= form_tag admin_login_path%>
+<div class: "Sign_Form">
+	<div class="form-control">
+      <%= label_tag(:username, 'Usuario') %><br>
+      <%= text_field_tag(:username, nil, placeholder: "Ej: user123") %>
+    </div>
+    <div class="form-control">
+      <%= label_tag(:password, 'Clave') %><br>
+      <%= password_field_tag(:password) %>
+    </div>
+    <div class="form-control">
+      <%= submit_tag("Entrar") %>
+    </div>
+    <span>
+      <p id="remember">
+        <%= link_to "¿Olvidaste tu clave?", sessions_recover_path%>
+      </p>
+    </span>
+    <span class="mensaje"><%= @mensaje%></span>
+</div>

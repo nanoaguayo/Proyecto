@@ -1,0 +1,15 @@
+<div>
+	<h1>Bloquear usuario</h1>
+</div>
+<%= form_tag admin_block_path%>
+<div class: "Sign_Form">
+	<div class="form-control">
+      <%= label_tag(:username, 'Ingrese usuario a bloquear') %>
+      <%= text_field_tag(:username, nil, placeholder: "Ej: user123") %>
+    </div>
+    <div class="form-control">
+      <%= submit_tag("Bloquear") %>
+    </div>
+    </br>
+    <span class="mensaje"><%= @error%></span>
+</div>

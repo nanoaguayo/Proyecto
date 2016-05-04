@@ -1,0 +1,23 @@
+<div>
+	<h1>Cambio de contraseña a Usuario</h1>
+</div>
+<%= form_tag admin_changepass_path%>
+<div class: "Sign_Form">
+	<div class="form-control">
+      <%= label_tag(:username, 'Ingrese usuario a cambiar contraseña  ') %>
+      <%= text_field_tag(:username, nil, placeholder: "Ingrese username.") %>
+     </div>
+	<div class="form-control">
+      <%= label_tag(:passwordnew, 'Ingrese contrasena nueva') %>
+      <%= password_field_tag(:passwordnew, nil, placeholder: "Entre 6 a 20 caracteres") %>
+     </div>
+     	<div class="form-control">
+      <%= label_tag(:passwordnew2, 'Repita contrasena nueva') %>
+      <%= password_field_tag(:passwordnew2, nil, placeholder: "Repita contraseña.") %>
+     </div>      
+    <div class="form-control">
+      <%= submit_tag("Cambiar") %>
+    </div>
+    </br>
+    <span class="mensaje"><%= @error%></span>
+</div>

@@ -1,0 +1,6 @@
+<span>
+	<h1>Consola administrador</h1>
+</span>
+<span >
+	<p class="welcome-admin">Bienvenido <b><%= User.where(id: session[:user_id]).first.username %></b>, usted se encuentra en modo administrador. Porfavor seleccione una opcion.</p>
+</span>

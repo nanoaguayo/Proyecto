@@ -1,0 +1,15 @@
+<div>
+	<h1>Reactivar usuarios</h1>
+</div>
+<%= form_tag admin_activate_path%>
+<div class: "Sign_Form">
+	<div class="form-control">
+      <%= label_tag(:username, 'Ingrese usuario a reactivar:') %>
+      <%= text_field_tag(:username, nil, placeholder: "Ingrese username.") %>
+    </div>
+    <div class="form-control">
+      <%= submit_tag("Desbloquear") %>
+    </div>
+    </br>
+    <span class="mensaje"><%= @error%></span>
+</div>

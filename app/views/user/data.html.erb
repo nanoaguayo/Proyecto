@@ -1,0 +1,12 @@
+<div>
+	<h1>Informacion</h1>
+</div>
+<% u=User.where(id:session[:user_id]).first%>
+<div class=user-info-container>
+
+	<span class="user-info"> <b>Usuario:</b> <%= u.username %></span>
+	<span class="user-info"> <b>Nombre:</b> <%= u.name %></span>
+	<span class="user-info"> <b>Apellido:</b> <%= u.lastname %></span>
+	<span class="user-info"> <b>Mail:</b> <%= u.mail %></span>
+			
+</div>

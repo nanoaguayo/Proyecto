@@ -1,0 +1,15 @@
+<div>
+	<h1>Usuarios registrados</h1>
+</div>
+<div>
+	<% @usuarios.each do |u| %>
+	<div class=user-info-container>
+		<span class="user-info"> <b>Usuario:</b> <%= u.username %></span>
+		<br>
+		<span class="pad-left2"><%= link_to 'Ver', admin_show_path(username: u.username)%></span>
+		<span class="pad-left"><%= link_to 'Bloquear', admin_block_path(username:u.username)%></span>
+		<span class="pad-left"><%= link_to 'Activar', admin_activate_path(username:u.username)%></span>
+		
+	</div>
+	<%end%>
+</div>

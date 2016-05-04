@@ -1,0 +1,23 @@
+<div>
+	<h1>Cambio de contrasena</h1>
+</div>
+<%= form_tag user_makechange_path %>
+<div class: "Sign_Form">
+	<div class="form-control">
+      <%= label_tag(:password, 'Ingrese contrasena actual') %>
+      <%= password_field_tag(:password, nil) %>
+    </div>
+    <div class="form-control">
+      <%= label_tag(:passwordnew, 'Ingrese contrasena nueva') %>
+      <%= password_field_tag(:passwordnew, nil, placeholder: "Minimo 6 caracteres.") %>
+    </div>
+    <div class="form-control">
+      <%= label_tag(:passwordnew2, 'Repita contrasena nueva') %>
+      <%= password_field_tag(:passwordnew2, nil, placeholder: "Minimo 6 caracteres.") %>
+    </div>
+    <div clas
+    <div class="form-control">
+      <%= submit_tag("Cambiar clave") %>
+    </div>
+    <span class="mensaje"><%= @error%></span>
+</div>

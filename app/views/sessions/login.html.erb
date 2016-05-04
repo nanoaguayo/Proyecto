@@ -1,0 +1,26 @@
+
+<div class= "Sign_Form">
+  <h1>Log in</h1>
+  <%= form_tag(:action => 'login_attempt') do %>
+  	<p class="be-red pad-left"> <%= @message %> </br></p>
+  	<div class: "Sign_Form">
+	    <div class="form-control">
+	  	    <p>Username:</br> 
+	  	    <%= text_field_tag(:login_username, nil, placeholder: "Ingrese username.") %></p> 
+	  	</div>
+	    <div class="form-control">
+	        <p>Password:</br>
+	        <%= password_field_tag :login_password, nil, placeholder: "Ingrese password." %></p> 
+	    </div>
+	    <div class="form-control">
+	        <%= submit_tag("Log In") %>
+	    </div>
+    </div>
+   	<span>
+   		<p id="remember">
+   			<%= link_to "¿Olvidaste tu clave?", sessions_recover_path%>
+   		</p>
+   	</span>
+  <% end %>
+
+</div>

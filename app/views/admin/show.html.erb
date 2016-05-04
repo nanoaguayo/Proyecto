@@ -1,0 +1,21 @@
+<div>
+	<h1>Datos de <%= @user.username%></h1>
+</div>
+<div class=user-info-container>
+	
+	<span class="user-info"> <b>Nombre:</b> <%= @user.name %></span>
+	<span class="user-info"> <b>Apellido:</b> <%= @user.lastname %></span>
+	<span class="user-info"> <b>Mail:</b> <%= @user.mail %></span>
+	<% if @user.admin==1 then %>
+	<span class="user-info"> <b>Acceso:</b> Administrador</span>
+	<% else %>
+	<span class="user-info"> <b>Acceso:</b> Usuario</span>
+	<% end %>
+	<% if @user.blocked==1 then %>
+	<span class="user-info"> <b>Estado:</b> Bloqueado</span>
+	<% else %>
+	<span class="user-info"> <b>Estado:</b> Activo</span>
+	<% end %>
+		
+</div>
+	

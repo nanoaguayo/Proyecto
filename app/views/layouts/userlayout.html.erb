@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>Proyecto</title>
+	  <%= stylesheet_link_tag   'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'default', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %> 
+	</head>
+	<body>
+		<header>
+		         <ul class="menu">
+		          <li class="menu-item"><%= link_to "Home",root_path %></li>
+		          <li><a href="" class="menu-item">SmartWatch</a></li>
+		          <li><a href=""class="menu-item">Vino</a></li>
+		          <li><a href="" class="menu-item">Ofertas</a></li>
+		          <%if session[:user_id]==nil%>
+		          <li class="menu-ingresar"><%= link_to "Ingresar", sessions_login_path %></li>
+		          <%else%>
+		            <%if User.where(id: session[:user_id]).first.admin == 0%>
+		          		<li class="menu-ingresar"><%= link_to "Logout", sessions_logout_path %></li>
+		          		<li class="menu-ingresar"><%= link_to "Mi Cuenta", user_account_path %></li>
+		          	<% else %>
+		          		<li class="menu-ingresar"><%= link_to "Logout", sessions_logout_path %></li>
+		          		<li class="active-menu-ingresar"><%= link_to "Mi Cuenta", user_account_path %></li>
+		          		<li class="menu-ingresar"><%= link_to "Administración", admin_menu_path %></li>
+		          	<%end%>
+		          <%end%>
+		        </ul>     
+		</header>
+		<div class="admin-menu">
+			<aside>
+				<section class="admin-side"><%= link_to "Ver datos", user_info_path %></section>
+				<section class="admin-side"><%= link_to "Cambiar contraseña", user_password_path %></section>
+			</aside>
+		</div>
+		<div class="main">
+
+			<%= yield %>
+
+		</dvi>
+	</body>
+</html>
