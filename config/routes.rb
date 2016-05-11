@@ -89,6 +89,9 @@ Rails.application.routes.draw do
 
   get 'admin/changepass' => 'admin#changepass'
   post 'admin/changepass' => 'admin#changepass'
+
+  get 'admin/article'
+  post 'admin/createarticle'
   #Usuarios
 
   # Example of regular route:

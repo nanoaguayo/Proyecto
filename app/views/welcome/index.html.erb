@@ -1,3 +1,15 @@
 <h1>Catalogo</h1>
 
-<p class="pad-left"> Aquí va el catalogo </p>
+<% @productos.each do |p| %>
+<% path="./public/images/products/"+p.id.to_s+"/"+p.image%>
+
+<section class="catalogo">
+	<article class="photo">
+		<a href=""><%= image_tag "/assets/images/products/6/3-a.jpg"%></a><br />
+        <span class="description"><%= p.title %></span>
+        <span class="price">$<%=p.price%></span>
+        <span class="description">Categoria: <%= p.category %></span>
+	<article>
+</section>
+
+<%end%>

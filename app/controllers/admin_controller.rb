@@ -285,7 +285,7 @@ class AdminController < ApplicationController
 		if user == nil 
 			redirect_to admin_path
 		elsif user.admin==0
-			redirect_to rooth_path
+			redirect_to root_path
 		end
 
 		username = params[:username]
@@ -309,6 +309,36 @@ class AdminController < ApplicationController
 			end
 		end
 	end
-		
+
+	def article
+
+		user = User.where(id: session[:user_id]).first
+		if user == nil 
+			redirect_to admin_path
+		elsif user.admin==0
+			redirect_to root_path
+		end
+
+	end
+
+	def createarticle
+
+		titulo= params[:title]
+		descripcion = params[:description]
+		precio = params[:price]
+		categoria = params[:category]
+		imagen = params[:image].original_filename
+
+		producto = Product.new(:title=>titulo,:description=>descripcion,:price=>precio,:category=>categoria,:image=>imagen)
+		producto.save
+
+		Dir.mkdir('public/images/products/'+ producto.id.to_s)
+		directorio= "public/images/products/"+producto.id.to_s+"/"
+		path = File.join(directorio, imagen)
+		File.open(path, "wb") { |f| f.write(params[:image].read) }
+
+		@mensaje = "Producto agregado con exito"
+		render 'article'
+	end		
 
 end

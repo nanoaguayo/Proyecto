@@ -1,0 +1,23 @@
+<div class="Sign_Form">
+  <h1>Crear producto</h1>
+  <%= form_tag admin_createarticle_path, multipart: true %>
+  	<span class="mensaje"> <%= @mensaje %> </span>
+    <div class="form-control">
+      <p> Titulo:</br> <%= text_field_tag(:title ,nil, placeholder: "Max 50 caracteres", size:"50") %> </p>
+    </div>
+    <div class="form-control">
+      <p> Descripcion:</br> <%= text_area_tag(:description, nil, size:"40x20",maxlength:"400",placeholder: "Maximo 400 caracteres") %> </p>
+    </div>
+    <div class="form-control">
+      <p> Precio:</br> <%= text_field_tag(:price, nil,placeholder: "Ingrese entero") %></p>
+    </div>
+    <div class="form-control">
+      <p> Categoria:</br> <%= select_tag "category", "<option>Smartwatch</option><option>Vino</option><option>Oferta</option>".html_safe %> </p>
+    </div>
+    <div class="form-control">
+     <p> Imagen:</br>  <%= file_field_tag "image" %></p>
+    </div>
+    <div class="form-control">
+      <%= submit_tag("Crear producto") %>
+    </div>
+</div>
