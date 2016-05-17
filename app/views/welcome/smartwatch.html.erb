@@ -1,8 +1,8 @@
-<h1>Catalogo</h1>
+<h1>Smartwatch</h1>
 <section class="catalogo">
-<% @productos.each do |p| %>
-	
-		<article class="photo">
+	<% @productos.each do |p| %>
+		<% if p.category=="Smartwatch" then %>
+			<article class="photo">
 			<div class="image-cont">
 				<a href=""><%=image_tag p.image%></a>
 			</div>
@@ -12,5 +12,6 @@
 		        <span class="description">Categoria: <%= p.category %></span>
 		    </div>
 		</article>
-<%end%>
+		<% end %>
+	<%end%>
 </section>

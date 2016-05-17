@@ -256,6 +256,7 @@ footer{
 
 .catalogo{
   margin-top: 10%;
+
 }
 
 /*END*/
@@ -265,10 +266,23 @@ footer{
   margin-left: 2.1%;
   margin-bottom: 3%;
   border: 1px solid black;
-  height: 30%;
   width: 30%;
   display: inline-block;
 
+}
+
+.image-cont{
+
+  width:90%;
+  height: 70%;
+  display: block;
+  margin-left:5%;
+}
+.text-cont{
+  display: block;
+  width: 90%;
+  height: 29%;
+  margin-left: 5%;
 }
 
 .photo2{

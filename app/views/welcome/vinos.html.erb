@@ -1,0 +1,17 @@
+<h1>Vinos</h1>
+<section class="catalogo">
+	<% @productos.each do |p| %>
+		<% if p.category=="Vino" then %>
+			<article class="photo">
+				<div class="image-cont">
+					<a href=""><%=image_tag p.image%></a>
+				</div>
+				<div class="text-cont">
+			        <span class="description"><%= p.title %></span>
+			        <span class="price">$<%=p.price%></span>
+			        <span class="description">Categoria: <%= p.category %></span>
+			    </div>
+			</article>
+		<% end %>
+	<%end%>
+</section>

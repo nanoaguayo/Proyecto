@@ -9,18 +9,18 @@
 	<body>
 		<header>
 		        <ul class="menu">
-		          <li class="active-menu-item"><%= link_to "Home",root_path %></li>
-		          <li><a href="" class="menu-item">SmartWatch</a></li>
-		          <li><a href="" class="menu-item">Vino</a></li>
-		          <li><a href="" class="menu-item">Ofertas</a></li>
+		          <li class="active-menu-item"><%= link_to "Inicio",root_path %></li>
+		          <li><a href="/smartwatch" class="menu-item">SmartWatch</a></li>
+		          <li><a href="/vinos" class="menu-item">Vino</a></li>
+		          <li><a href="/ofertas" class="menu-item">Ofertas</a></li>
 		          <%if session[:user_id]==nil%>
 		          <li class="menu-ingresar"><%= link_to "Ingresar", sessions_login_path %></li>
 		          <%else%>
 		          	<%if User.where(id: session[:user_id]).first.admin == 0%>
-		          		<li class="menu-ingresar"><%= link_to "Logout", sessions_logout_path %></li>
+		          		<li class="menu-ingresar"><%= link_to "Salir", sessions_logout_path %></li>
 		          		<li class="menu-ingresar"><%= link_to "Mi Cuenta", user_account_path %></li>
 		          	<% else %>
-		          		<li class="menu-ingresar"><%= link_to "Logout", sessions_logout_path %></li>
+		          		<li class="menu-ingresar"><%= link_to "Salir", sessions_logout_path %></li>
 		          		<li class="menu-ingresar"><%= link_to "Mi Cuenta", user_account_path %></li>
 		          		<li class="menu-ingresar"><%= link_to "Administracion", admin_menu_path %></li>
 		          	<%end%>

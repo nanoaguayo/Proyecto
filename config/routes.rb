@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get 'welcome' =>'welcome#index'
+  get 'smartwatch' =>'welcome#smartwatch'
+  get 'vinos' => 'welcome#vinos'
+  get 'ofertas' => 'welcome#ofertas'
+
 
   get 'sessions/login' => 'sessions#login'
 
