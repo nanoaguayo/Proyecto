@@ -1,12 +1,9 @@
 <div class="Sign_Form">
   <h1>Crear Usuario</h1>
   <%= form_tag admin_create_path %>
-  	<% @user.errors.full_messages.each do |message| %>
-  		<p class="be-red pad-left">* <%= message %> </br></p>
-  	<% end %>
   	<span class="mensaje"> <%= @mensaje %> </span>
     <div class="form-control">
-      <p> Username:</br> <%= text_field_tag(:username, nil, placeholder: "Entre 3 a 20 caracteres.") %> </p>
+      <p> Nombre de usuario:</br> <%= text_field_tag(:username, nil, placeholder: "Entre 3 a 20 caracteres.") %> </p>
     </div>
     <div class="form-control">
       <p> Nombre:</br> <%= text_field_tag(:name, nil, placeholder:"Obligatorio.") %> </p>
@@ -15,13 +12,13 @@
       <p> Apellido:</br> <%= text_field_tag(:lastname, nil,placeholder: "Obligatorio.") %></p>
     </div>
     <div class="form-control">
-      <p> Email:</br> <%= text_field_tag(:email, nil,placeholder: "Debe cumplir x@x.xx") %> </p>
+      <p> Correo electrónico:</br> <%= text_field_tag(:email, nil,placeholder: "Debe cumplir x@x.xx") %> </p>
     </div>
     <div class="form-control">
-     <p> Password:</br>  <%= password_field_tag(:password, nil, placeholder: "Entre 6 a 20 caracteres") %></p>
+     <p> Contraseña:</br>  <%= password_field_tag(:password, nil, placeholder: "Entre 6 a 20 caracteres") %></p>
     </div>
     <div class="form-control">
-    <p> Password Confirmation:</br> <%= password_field_tag(:password_confirmation, nil,placeholder:"Repita contrasena") %></p>
+    <p> Confirmación de Contraseña:</br> <%= password_field_tag(:password_confirmation, nil,placeholder:"Repita contrasena") %></p>
     </div>
     <div class="form-control">
       <%= submit_tag("Registrar Usuario") %>

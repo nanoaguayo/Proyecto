@@ -3,15 +3,15 @@
 </div>
 <div class="pad-left">
 	<p class="be-red pad-left">* <%= @message %> </br></p>
-  	<p>Ingrese su usuario y se enviara la contrasena a su correo electronico registrado</p>
+  	<p>Ingrese su usuario y se enviara la contraseña a su correo electronico registrado</p>
 </div>
 <div class= "Sign_Form pad-left2">
  
   <%= form_tag(:action => 'sendpass') do %>
   	  	</br>
-    <p>Ingrese usuario:</br> <%= text_field_tag(:username, nil, placeholder: "Ingrese username") %></p> 
+    <p>Ingrese usuario:</br> <%= text_field_tag(:username, nil, placeholder: "Ingrese nombre de usuario.") %></p> 
     
-    <%= submit_tag("Enviar contrasena a correo") %>
+    <%= submit_tag("Enviar contraseña a correo") %>
    
   <% end %>
 

@@ -47,23 +47,23 @@ class UserController < ApplicationController
 		if user.password == pass then
 			#vemos condicion y cambiamos
 			if passnew.length<6
-				@error = 'Contrasena nueva con menos de 6 caracteres,'
+				@error = 'Contraseña nueva con menos de 6 caracteres,'
 				render 'changepass'
 			elsif passnew.length>20
-				@error = 'Contrasena nueva excede 20 caracteres.'
+				@error = 'Contraseña nueva excede 20 caracteres.'
 				render 'changepass'
 			elsif passnew != passnew2
-				@error = 'Contrasenas ingresadas tienen que ser iguales.'
+				@error = 'Contraseñas ingresadas tienen que ser iguales.'
 				render 'changepass'
 			else
 				user.password = passnew
 				user.save
-				@error = 'Contrasena cambiada con éxito.'
+				@error = 'Contraseña cambiada con éxito.'
 				render 'changepass'
 			end
 
 		else
-			@error="Contrasena actual incorrecta."
+			@error="Contraseña actual incorrecta."
 			render 'changepass'
 		end
 	end

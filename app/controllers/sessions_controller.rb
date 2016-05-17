@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
         redirect_to user_account_path
       end
     else
-    	@message = "Username o Password invalida."
+    	@message = "Nombre de usuario o contraseña invalida."
       	render "login"	
     end
   end
@@ -43,7 +43,7 @@ class SessionsController < ApplicationController
         render "login_admin"
       end
     else
-      @message = "Username o Password invalida."
+      @message = "Username o contraseña invalida."
       render "login_admin" 
     end
   end

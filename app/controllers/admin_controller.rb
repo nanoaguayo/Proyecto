@@ -67,15 +67,45 @@ class AdminController < ApplicationController
 
 	  	@user = User.new(:username => username, :password => password, :name => nombre, :lastname => apellido, :mail => email, :admin => admin, :blocked => blocked)    
 	    if password == password_confirmation
-
-		    if @user.save
-		       @mensaje="Usuario creado con éxito."
-		        render 'new'
-		    else  	
-		   		render 'new'
-		    end
+	    	if !username.blank? 
+	    		if username.length>=3 and username.length<=20
+	    			if !email.blank?
+	    				if !nombre.blank? and !apellido.blank?
+	    					if !password.blank?
+		    					if password.length>=3 and password.length<=20
+								    if @user.save
+								       @mensaje="Usuario creado con éxito."
+								       render 'new'
+								    else 
+								    	@mensaje="Problemas con nombre de usuario o correo electronico, formayo incorrecto o ya ocupado."	
+								   		render 'new'
+								    end
+								else
+									@mensaje = "Largo de contraseñas incorrecto. Debe ser entre 3 a 20 caracteres."
+									render 'new'	
+								end
+							else
+								@mensaje = "Se necesita ingresar una contraseña."
+								render 'new'
+							end
+						else
+							@mensaje = "Se necesita ingresar nombre y apellido."
+							render 'new'
+						end
+					else
+						@mensaje = "Se necesita ingresar correo electronico."
+						render 'new'
+					end
+				else
+					@mensaje = "Largo de nombre de usuario incorrecto. Debe ser entre 3 a 20 caracteres."
+					render 'new'					
+				end
+			else
+				@mensaje = "Se necesita ingresar nombre de usuario."
+				render 'new'
+			end
 		else
-			@mensaje = "* Passwords must be the same. "
+			@mensaje = "Las contraseñas tienen que ser las mismas."
 			render 'new'
 		end
 	end
@@ -135,14 +165,14 @@ class AdminController < ApplicationController
 			if !username2.blank? 
 				@user.username = username2
 				if @user.save
-					@mensaje_username = "Username cambiado con éxito. Nuevo username: '#{username2}'"
+					@mensaje_username = "Nombre de usuario cambiado con éxito. Nuevo Nombre de usuario: '#{username2}'"
 				else
 					if username2.length < 3
-						@mensaje_username = 'Username no se pudo cambiar, posee menos de 3 caracteres.'
+						@mensaje_username = 'Nombre de usuario no se pudo cambiar, posee menos de 3 caracteres.'
 					elsif username2.length > 20
-						@mensaje_username = 'Username no se pudo cambiar, excedió los 20 caracteres.'
+						@mensaje_username = 'Nombre de usuario no se pudo cambiar, excedió los 20 caracteres.'
 					else
-						@mensaje_username = 'Username no se pudo cambiar, username ya ocupado.'
+						@mensaje_username = 'Nombre de usuario no se pudo cambiar, username ya ocupado.'
 					end
 				end
 			end
@@ -168,9 +198,9 @@ class AdminController < ApplicationController
 			if !email.blank?
 				@user.mail = email
 				if @user.save
-					@mensaje_email = "Email cambiado con éxito. Nuevo nombre: '#{email}'."
+					@mensaje_email = "Correo electrónico cambiado con éxito. Nuevo Correo electrónico: '#{email}'."
 				else
-					@mensaje_email = 'Email no se pudo cambiar. No cumple con formato pedido o ya esta ocupado'
+					@mensaje_email = 'Correo electrónico no se pudo cambiar. No cumple con formato pedido o ya esta ocupado'
 				end
 			end
 
@@ -332,10 +362,15 @@ class AdminController < ApplicationController
 		producto = Product.new(:title=>titulo,:description=>descripcion,:price=>precio,:category=>categoria,:image=>imagen)
 		producto.save
 
-		Dir.mkdir('public/images/products/'+ producto.id.to_s)
-		directorio= "public/images/products/"+producto.id.to_s+"/"
+		#Dir.mkdir('public/images/products/'+ producto.id.to_s)
+		directorio= "app/assets/images/"
+		extension = imagen.split('.').last.downcase
+		imagen = producto.id.to_s + "." + extension
+		producto.image = imagen
+		producto.save
 		path = File.join(directorio, imagen)
 		File.open(path, "wb") { |f| f.write(params[:image].read) }
+
 
 		@mensaje = "Producto agregado con exito"
 		render 'article'

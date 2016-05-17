@@ -5,12 +5,12 @@
     <p class="be-red pad-left"> <%= @message %> </br></p>
     <div class: "Sign_Form">
       <div class="form-control">
-          <p>Username:</br> 
-          <%= text_field_tag(:login_username, nil, placeholder: "Ingrese username.") %></p> 
+          <p>Nombre de usuario:</br> 
+          <%= text_field_tag(:login_username, nil, placeholder: "Ingrese nombre de usuario.") %></p> 
       </div>
       <div class="form-control">
-          <p>Password:</br>
-          <%= password_field_tag :login_password, nil, placeholder: "Ingrese password." %></p> 
+          <p>Contraseña:</br>
+          <%= password_field_tag :login_password, nil, placeholder: "Ingrese contraseña." %></p> 
       </div>
       <div class="form-control">
           <%= submit_tag("Log In") %>
