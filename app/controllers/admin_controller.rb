@@ -357,23 +357,42 @@ class AdminController < ApplicationController
 		descripcion = params[:description]
 		precio = params[:price]
 		categoria = params[:category]
-		imagen = params[:image].original_filename
+		imagen = params[:image]
 
-		producto = Product.new(:title=>titulo,:description=>descripcion,:price=>precio,:category=>categoria,:image=>imagen)
-		producto.save
+		if titulo.blank?
+			@mensaje = "Es necesario ingresar un título."
+			render 'article'
+		else
+			if precio.blank?
+				@mensaje = "Es necesario ingresar un precio."
+				render 'article'
+			else
+				if imagen== nil
+					@mensaje = "Es necesario ingresar una imagen."
+					render 'article'
+				else
+					imagen = params[:image].original_filename
+					producto = Product.new(:title=>titulo,:description=>descripcion,:price=>precio,:category=>categoria,:image=>imagen)
+					producto.save
 
-		#Dir.mkdir('public/images/products/'+ producto.id.to_s)
-		directorio= "app/assets/images/"
-		extension = imagen.split('.').last.downcase
-		imagen = producto.id.to_s + "." + extension
-		producto.image = imagen
-		producto.save
-		path = File.join(directorio, imagen)
-		File.open(path, "wb") { |f| f.write(params[:image].read) }
+					directorio= "app/assets/images/"
+					extension = imagen.split('.').last.downcase
+					imagen = producto.id.to_s + "." + extension
 
 
-		@mensaje = "Producto agregado con exito"
-		render 'article'
+					producto.image = imagen
+					producto.save
+
+
+					path = File.join(directorio, imagen)
+					File.open(path, "wb") { |f| f.write(params[:image].read) }
+
+
+					@mensaje = "Producto agregado con exito"
+					render 'article'
+				end
+			end
+		end
 	end		
 
 end
