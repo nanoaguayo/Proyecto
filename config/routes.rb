@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'show' => 'welcome#show'
   get 'edit' => 'welcome#edit'
   post 'makeedition' => 'welcome#makeEdition'
+  get 'delete' => 'welcome#delete'
 
 
   get 'sessions/login' => 'sessions#login'

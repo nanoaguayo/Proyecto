@@ -68,6 +68,19 @@ def makeEdition
 		
 end
 
+def delete
+
+	if User.where(id: session[:user_id]).first.admin==0 then
+		redirect_to root_path
+	end
+	
+	@producto = Product.where(id: params[:product_id]).first
+
+	Product.delete(@producto.id)
+	redirect_to root_path
+
+end
+
 def number_or_nil(string)
   Integer(string || '')
 rescue ArgumentError

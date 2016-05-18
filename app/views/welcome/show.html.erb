@@ -20,4 +20,7 @@
   <section class="edit-button">
     <%=link_to "Editar", edit_path(:product_id => @prod.id)%>
   </section>
+    <section class="edit-button">
+    <%=link_to "Eliminar", delete_path(:product_id => @prod.id)%>
+  </section>
 <%end%>
