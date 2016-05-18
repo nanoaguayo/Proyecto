@@ -1,0 +1,23 @@
+<section>
+   <h1><%=@prod.title%></h1>
+</section>
+
+<section class="itemcontainer">
+
+  <section>
+    <%= image_tag @prod.image,class:"foto1"%>
+  </section>
+  
+  <section class="descripcion">
+    <section><h3 class="descripcion-title">Descripcion</h3></section>
+    <section><p class="descripcion-body"><%= @prod.description%></p></section> 
+    <span class="price2">$<%= @prod.price %></span>
+  </section>
+
+</section>
+
+<% if User.where(id: session[:user_id]).first.admin==1%>
+  <section class="edit-button">
+    <%=link_to "Editar", edit_path(:product_id => @prod.id)%>
+  </section>
+<%end%>

@@ -1,0 +1,35 @@
+<div>
+	<h1>Editando <%= @prod.title %></h1>
+</div>
+<p class="pad-left"> Solo se cambiaran los datos que sean rellenados y que además cumplan con los requisitos.</p>
+
+<div class: "Sign_Form">
+  	<%= form_tag makeedition_path %>
+  		<table style= "width:100%">
+			<tr>
+				<td class="mensaje"> <%= @error %> </td>
+			</tr>  
+			<tr>
+				<td class="mensaje"> <%= @mensaje_precio %> </td>
+			</tr>
+		</table>
+		<div class="form-control">
+	      <p> Nuevo titulo:</br> <%= text_field_tag(:title, nil, placeholder: @prod.title) %> </p>
+	    </div>
+	    </br>
+	    <div class="form-control">
+	      <p> Descripcion:</br> <%= text_area_tag(:description, nil, size:"50x9",maxlength:"400",placeholder: @prod.description ) %> </p>
+	    </div>
+	    <div class="form-control">
+	    	<p> Precio:</br> <%= text_field_tag(:price, nil, placeholder:@prod.price) %> </p>
+	    </div>
+	     <div class="form-control">
+      		<p> Categoría:</br> <%= select_tag "category", "<option>Smartwatch</option><option>Vino</option><option>Oferta</option>".html_safe %> </p>
+    	</div>
+    	<%= hidden_field_tag :product_id , @prod.id %>
+	<div class="form-control">
+	  <%= submit_tag("Editar") %>
+	</div>
+
+</div>
+		

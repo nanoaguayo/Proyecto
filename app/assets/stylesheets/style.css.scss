@@ -36,14 +36,16 @@ main {
 
 .main{
 
-  display: inline-block;
+  
   background: #fff;
   width: 60%;
-  min-height: 100%;
   margin: 0 auto;
   border-left: 1px solid black;
   border-right: 1px solid black;
   float: left;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 
 }
 
@@ -522,4 +524,14 @@ img{
 #input-descripcion{
   height: 15em;
   width:20em;
+}
+
+.foto1{
+  margin: 0 40%;
+  max-height: 250px;
+
+}
+.edit-button{
+  font-size: large;
+
 }

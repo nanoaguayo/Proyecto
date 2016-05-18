@@ -4,7 +4,7 @@
 	
 		<article class="photo">
 			<div class="image-cont">
-				<a href=""><%=image_tag asset_path(p.image)%></a>
+				<%=link_to (image_tag asset_path(p.image)), show_path(:product_id => p.id)%>
 			</div>
 			<div class="text-cont">
 		        <span class="description"><%= p.title %></span>

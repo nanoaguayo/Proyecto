@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   get 'vinos' => 'welcome#vinos'
   get 'ofertas' => 'welcome#ofertas'
 
+  get 'show' => 'welcome#show'
+  get 'edit' => 'welcome#edit'
+  post 'makeedition' => 'welcome#makeEdition'
+
 
   get 'sessions/login' => 'sessions#login'
 
@@ -34,7 +38,7 @@ Rails.application.routes.draw do
   get 'sessions/recover'
   post 'sessions/send' =>'sessions#sendpass'
 
-
+  
   #User
 
   get 'user/account'
@@ -96,7 +100,10 @@ Rails.application.routes.draw do
 
   get 'admin/article'
   post 'admin/createarticle'
-  #Usuarios
+  
+
+ 
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
