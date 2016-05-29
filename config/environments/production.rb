@@ -8,6 +8,8 @@ Rails.application.configure do
   config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
   config.assets.compile = true
 
+  config.assets.initialize_on_precompile = false
+
   rake assets:precompile
 
   # Eager load code on boot. This eager loads most of Rails and
