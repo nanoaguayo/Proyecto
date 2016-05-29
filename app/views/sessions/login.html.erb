@@ -1,16 +1,21 @@
 
 <div class= "Sign_Form">
   <h1>Inicio de sesión</h1>
-  <%= form_tag(:action => 'login_attempt') do %>
-  	<p class="be-red pad-left"> <%= @message %> </br></p>
+  <%= form_tag({:action => 'login_attempt'}, {:onsubmit=> "return f1();"}) do %>
+  	<p class="be-red pad-left" id="message"> <%= @message %> </br></p>
   	<div class: "Sign_Form">
 	    <div class="form-control">
 	  	    <p>Nombre de usuario:</br> 
-	  	    <%= text_field_tag(:login_username, nil, placeholder: "Ingrese nombre de usuario.") %></p> 
+	  	    <%= text_field_tag(:login_username, nil, placeholder: "Ingrese nombre de usuario.", id: "username-input", oninput:"CheckUsername()") %></p> 
+	  	    <span class="be-red"><p id="message-user"></p></span>
+	  	    </br>
 	  	</div>
 	    <div class="form-control">
 	        <p>Contraseña:</br>
-	        <%= password_field_tag :login_password, nil, placeholder: "Ingrese contraseña" %></p> 
+	        <%= password_field_tag :login_password, nil, placeholder: "Ingrese contraseña", id:"password-input", oninput: "CheckPassword()" %></p>
+	        </br>
+	        <span class="be-red"><p id="message-pass"></p></span> 
+	        </br>
 	    </div>
 	    <div class="form-control">
 	        <%= submit_tag("Ingresar") %>

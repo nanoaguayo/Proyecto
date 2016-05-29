@@ -11,19 +11,20 @@ class SessionsController < ApplicationController
   end
 
   def login_attempt
-    authorized_user = User.authenticate(params[:login_username],params[:login_password])
-    if authorized_user
-      if authorized_user.blocked == 1
-          @message = "Esta cuenta está bloqueada."
-          render "login"
+      
+      authorized_user = User.authenticate(params[:login_username],params[:login_password])
+      if authorized_user
+        if authorized_user.blocked == 1
+            @message = "Esta cuenta está bloqueada."
+            render "login"
+        else
+        	session[:user_id] = authorized_user.id
+          redirect_to user_account_path
+        end
       else
-      	session[:user_id] = authorized_user.id
-        redirect_to user_account_path
+      	@message = "Nombre de usuario o contraseña invalida."
+        	render "login"	
       end
-    else
-    	@message = "Nombre de usuario o contraseña invalida."
-      	render "login"	
-    end
   end
 
   def login_admin

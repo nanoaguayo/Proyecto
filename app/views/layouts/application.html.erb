@@ -3,7 +3,7 @@
 	<head>
 	  <title>Proyecto</title>
 	  <%= stylesheet_link_tag   'application', media: 'all', 'data-turbolinks-track' => true %>
-	  <%= javascript_include_tag 'default', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	  <%= csrf_meta_tags %> 
 	</head>
 	<body>
@@ -22,7 +22,9 @@
 		          	<% else %>
 		          		<li class="menu-ingresar"><%= link_to "Salir", sessions_logout_path %></li>
 		          		<li class="menu-ingresar"><%= link_to "Mi Cuenta", user_account_path %></li>
-		          		<li class="menu-ingresar"><%= link_to "Administracion", admin_menu_path %></li>
+		          		<li class="menu-ingresar"><%= link_to "Administracion", admin_menu_path %>
+		          			
+		          		</li>
 		          	<%end%>
 		          <%end%>
 		        </ul>    
