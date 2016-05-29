@@ -1,5 +1,11 @@
+$(document).on("page:change",function(){
 
-  function CheckUsername() {
+    $("form").attr("onsubmit","return f1();");
+    $("#username-input").attr("oninput","CheckUsername()");
+    $("#password-input").attr("oninput","CheckPassword()");
+});
+
+function CheckUsername() {
     var field, message;
     field = void 0;
     message = void 0;
