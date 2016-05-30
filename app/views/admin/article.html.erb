@@ -3,7 +3,8 @@
   <%= form_tag admin_createarticle_path, multipart: true %>
   	<span class="mensaje"> <%= @mensaje %> </span>
     <div class="form-control">
-      <p> Titulo:</br> <%= text_field_tag(:title ,nil, placeholder: "Max 50 caracteres", size:"50") %> </p>
+      <p> Titulo:</br> <%= text_field_tag(:title ,nil, placeholder: "Max 50 caracteres", size:"50", id: "titulo-input") %> </p>
+        <span class="be-red"><p id="message-titulo"></p></span>
     </div>
     <div class="form-control">
       <p> Descripción:</br> <%= text_area_tag(:description, nil, size:"40x20",maxlength:"400",placeholder: "Maximo 400 caracteres") %> </p>

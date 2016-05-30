@@ -1,7 +1,7 @@
 
 <div class= "Sign_Form">
   <h1>Inicio de sesión</h1>
-  <%= form_tag({:action => 'login_attempt'}) do %>
+  <%= form_tag({:action => 'login_attempt'}, id:"log-form") do %>
   	<p class="be-red pad-left" id="message"> <%= @message %> </br></p>
   	<div class: "Sign_Form">
 	    <div class="form-control">

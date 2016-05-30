@@ -1,19 +1,24 @@
 <div>
 	<h1>Cambio de contraseña a Usuario</h1>
 </div>
-<%= form_tag admin_changepass_path%>
+<%= form_tag admin_changepass_path, id: "pass-form"%>
 <div class: "Sign_Form">
 	<div class="form-control">
       <%= label_tag(:username, 'Ingrese usuario a cambiar contraseña  ') %>
-      <%= text_field_tag(:username, nil, placeholder: "Ingrese nombre de usuario.") %>
+      <%= text_field_tag(:username, nil, placeholder: "Ingrese nombre de usuario.", id: "username-input") %>
+      <span class="be-red"><p id="message-user"></p></span>
      </div>
+
 	<div class="form-control">
       <%= label_tag(:passwordnew, 'Ingrese contraseña nueva') %>
-      <%= password_field_tag(:passwordnew, nil, placeholder: "Entre 6 a 20 caracteres") %>
+      <%= password_field_tag(:passwordnew, nil, placeholder: "Entre 6 a 20 caracteres", id: "password-input") %>
+        <span class="be-red"><p id="message-pass"></p></span>
      </div>
+
      	<div class="form-control">
       <%= label_tag(:passwordnew2, 'Repita contraseña nueva') %>
-      <%= password_field_tag(:passwordnew2, nil, placeholder: "Repita contraseña.") %>
+      <%= password_field_tag(:passwordnew2, nil, placeholder: "Repita contraseña.", id: "confirmation-input") %>
+      <span class="be-red"><p id="message-confirmation"></p></span>
      </div>      
     <div class="form-control">
       <%= submit_tag("Cambiar") %>

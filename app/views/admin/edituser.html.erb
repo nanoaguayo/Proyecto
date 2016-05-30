@@ -22,22 +22,30 @@
 				<td class="mensaje"> <%= @mensaje_email %> </td>
 			</tr>
 		</table>
+
 		<div class="form-control">
-	      <p> Usuario a editar:</br> <%= text_field_tag(:username, nil, placeholder: "Ingrese nombre de usuario.") %> </p>
+	      <p> Usuario a editar:</br> <%= text_field_tag(:username, nil, placeholder: "Ingrese nombre de usuario.", id: "username-input") %> </p>     
+	      <span class="be-red"><p id="message-user"></p></span>
 	    </div>
+
 	    </br>
 	    <div class="form-control">
-	      <p> Nombre de usuario nuevo:</br> <%= text_field_tag(:username2, nil, placeholder: "Entre 3 a 20 caracteres.") %> </p>
+	      <p> Nombre de usuario nuevo:</br> <%= text_field_tag(:username2, nil, placeholder: "Entre 3 a 20 caracteres.", id: "username2-input") %> </p>
+	      <span class="be-red"><p id="message-user2"></p></span>
 	    </div>
 	    <div class="form-control">
-	    	<p> Nombre nuevo:</br> <%= text_field_tag(:name, nil, placeholder:"Ingrese nuevo Nombre.") %> </p>
+	    	<p> Nombre nuevo:</br> <%= text_field_tag(:name, nil, placeholder:"Ingrese nuevo Nombre.", id: "nombre-input") %> </p>
+	   	      <span class="be-red"><p id="message-nombre"></p></span>
 	    </div>
 	    <div class="form-control">
-	    	<p> Apellido nuevo:</br> <%= text_field_tag(:lastname, nil,placeholder: "Ingrese nuevo Apellido.") %></p>
+	    	<p> Apellido nuevo:</br> <%= text_field_tag(:lastname, nil,placeholder: "Ingrese nuevo Apellido.", id: "apellido-input") %></p>
+	          <span class="be-red"><p id="message-apellido"></p></span>
 	    </div>
 	    <div class="form-control">
-	    	<p> Correo electrónico nuevo:</br> <%= text_field_tag(:mail, nil,placeholder: "Debe cumplir x@x.xx") %> </p>
+	    	<p> Correo electrónico nuevo:</br> <%= text_field_tag(:mail, nil,placeholder: "Debe cumplir x@x.xx", id: "email-input") %> </p>
+	    	<span class="be-red"><p id="message-email"></p></span>
 	    </div>
+
 	<div class="form-control">
 	  <%= submit_tag("Editar") %>
 	</div>

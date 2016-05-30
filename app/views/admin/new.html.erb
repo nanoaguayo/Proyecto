@@ -1,24 +1,35 @@
 <div class="Sign_Form">
   <h1>Crear Usuario</h1>
-  <%= form_tag admin_create_path %>
+  <%= form_tag admin_create_path, id: "create-form" %>
   	<span class="mensaje"> <%= @mensaje %> </span>
     <div class="form-control">
-      <p> Nombre de usuario:</br> <%= text_field_tag(:username, nil, placeholder: "Entre 3 a 20 caracteres.") %> </p>
+      <p> Nombre de usuario:</br> <%= text_field_tag(:username, nil, placeholder: "Entre 3 a 20 caracteres.", id: "username-input") %> </p>
+      <span class="be-red"><p id="message-user"></p></span>
     </div>
+
     <div class="form-control">
-      <p> Nombre:</br> <%= text_field_tag(:name, nil, placeholder:"Obligatorio.") %> </p>
+      <p> Nombre:</br> <%= text_field_tag(:name, nil, placeholder:"Obligatorio.", id: "nombre-input") %> </p>
+    <span class="be-red"><p id="message-nombre"></p></span>
     </div>
+
     <div class="form-control">
-      <p> Apellido:</br> <%= text_field_tag(:lastname, nil,placeholder: "Obligatorio.") %></p>
+      <p> Apellido:</br> <%= text_field_tag(:lastname, nil,placeholder: "Obligatorio.", id: "apellido-input") %></p>
+    <span class="be-red"><p id="message-apellido"></p></span>
     </div>
+
     <div class="form-control">
-      <p> Correo electrónico:</br> <%= text_field_tag(:email, nil,placeholder: "Debe cumplir x@x.xx") %> </p>
+      <p> Correo electrónico:</br> <%= text_field_tag(:email, nil,placeholder: "Debe cumplir x@x.xx", id: "email-input") %> </p>
+    <span class="be-red"><p id="message-email"></p></span>
     </div>
+
     <div class="form-control">
-     <p> Contraseña:</br>  <%= password_field_tag(:password, nil, placeholder: "Entre 6 a 20 caracteres") %></p>
+     <p> Contraseña:</br>  <%= password_field_tag(:password, nil, placeholder: "Entre 6 a 20 caracteres", id: "password-input") %></p>
+    <span class="be-red"><p id="message-pass"></p></span> 
     </div>
+
     <div class="form-control">
-    <p> Confirmación de Contraseña:</br> <%= password_field_tag(:password_confirmation, nil,placeholder:"Repita contrasena") %></p>
+    <p> Confirmación de Contraseña:</br> <%= password_field_tag(:password_confirmation, nil,placeholder:"Repita contrasena", id: "confirmation-input") %></p>
+    <span class="be-red"><p id="message-confirmation"></p></span> 
     </div>
     <div class="form-control">
       <%= submit_tag("Registrar Usuario") %>

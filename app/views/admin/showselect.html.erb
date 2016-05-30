@@ -1,11 +1,12 @@
 <div>
 	<h1>Seleccione Usuario</h1>
 </div>
-<%= form_tag admin_show_path%>
+<%= form_tag admin_show_path, id: "user-form" %>
 <div class: "Sign_Form">
 	<div class="form-control">
       <%= label_tag(:username, 'Ingrese usuario a consultar') %>
-      <%= text_field_tag(:username, nil, placeholder: "Ej: user123") %>
+      <%= text_field_tag(:username, nil, placeholder: "Ej: user123", id: "username-input") %>
+      <span class="be-red"><p id="message-user"></p></span>
     </div>
     <div class="form-control">
       <%= submit_tag("Ver") %>

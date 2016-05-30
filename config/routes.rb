@@ -71,8 +71,8 @@ Rails.application.routes.draw do
   get 'admin/users' =>'admin#listUsers'
 
   get 'admin/new' => 'admin#new'
-  post 'admin/create' =>'admin#create'
-  get 'admin/create' =>'admin#create'
+  post 'admin/create' 
+  get 'admin/create' 
 
   get 'admin/showselect' =>'admin#showselect'
   post 'admin/show' => 'admin#show'

@@ -1,19 +1,22 @@
 <div>
 	<h1>Cambio de contraseña</h1>
 </div>
-<%= form_tag user_makechange_path %>
+<%= form_tag user_makechange_path, id: "passUser-form" %>
 <div class: "Sign_Form">
 	<div class="form-control">
       <%= label_tag(:password, 'Ingrese contraseña actual') %>
-      <%= password_field_tag(:password, nil) %>
+      <%= password_field_tag(:password, nil, id: "password2-input") %>
+        <span class="be-red"><p id="message-pass2"></p></span>
     </div>
     <div class="form-control">
       <%= label_tag(:passwordnew, 'Ingrese contraseña nueva') %>
-      <%= password_field_tag(:passwordnew, nil, placeholder: "Minimo 6 caracteres.") %>
+      <%= password_field_tag(:passwordnew, nil, placeholder: "Minimo 6 caracteres.", id: "password-input") %>
+        <span class="be-red"><p id="message-pass"></p></span>
     </div>
     <div class="form-control">
       <%= label_tag(:passwordnew2, 'Repita contraseña nueva') %>
-      <%= password_field_tag(:passwordnew2, nil, placeholder: "Minimo 6 caracteres.") %>
+      <%= password_field_tag(:passwordnew2, nil, placeholder: "Minimo 6 caracteres.", id: "confirmation-input") %>
+        <span class="be-red"><p id="message-confirmation"></p></span>
     </div>
     <div clas
     <div class="form-control">
