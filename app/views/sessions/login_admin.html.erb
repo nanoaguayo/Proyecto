@@ -1,16 +1,18 @@
 
 <div class= "Sign_Form">
   <h1>Ingreso Administrador</h1>
-  <%= form_tag(:action => 'login_attempt_admin') do %>
+  <%= form_tag({:action => 'login_attempt_admin'}, id: "log-form") do %>
     <p class="be-red pad-left"> <%= @message %> </br></p>
     <div class: "Sign_Form">
       <div class="form-control">
           <p>Nombre de usuario:</br> 
-          <%= text_field_tag(:login_username, nil, placeholder: "Ingrese nombre de usuario.") %></p> 
+          <%= text_field_tag(:login_username, nil, placeholder: "Ingrese nombre de usuario.", id: "username-input") %></p> 
+          <span class="be-red"><p id="message-user"></p></span>
       </div>
       <div class="form-control">
           <p>Contraseña:</br>
-          <%= password_field_tag :login_password, nil, placeholder: "Ingrese contraseña." %></p> 
+          <%= password_field_tag :login_password, nil, placeholder: "Ingrese contraseña.", id: "password-input" %></p> 
+          <span class="be-red"><p id="message-pass"></p></span>
       </div>
       <div class="form-control">
           <%= submit_tag("Ingresar") %>
