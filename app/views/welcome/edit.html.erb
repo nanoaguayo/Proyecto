@@ -4,7 +4,7 @@
 <p class="pad-left"> Solo se cambiaran los datos que sean rellenados y que además cumplan con los requisitos.</p>
 
 <div class: "Sign_Form">
-  	<%= form_tag makeedition_path %>
+  	<%= form_tag makeedition_path, id: "articleEdit-form" %>
   		<table style= "width:100%">
 			<tr>
 				<td class="mensaje"> <%= @error %> </td>
@@ -21,7 +21,8 @@
 	      <p> Descripcion:</br> <%= text_area_tag(:description, nil, size:"50x9",maxlength:"400",placeholder: @prod.description ) %> </p>
 	    </div>
 	    <div class="form-control">
-	    	<p> Precio:</br> <%= text_field_tag(:price, nil, placeholder:@prod.price) %> </p>
+	    	<p> Precio:</br> <%= text_field_tag(:price, nil, placeholder:@prod.price, id: "precio2-input") %> </p>
+	  	    <span class="be-red"><p id="message-precio2"></p></span>
 	    </div>
 	     <div class="form-control">
       		<p> Categoría:</br> <%= select_tag "category", "<option>Smartwatch</option><option>Vino</option><option>Oferta</option>".html_safe %> </p>

@@ -1,6 +1,6 @@
 <div class="Sign_Form">
   <h1>Crear producto</h1>
-  <%= form_tag admin_createarticle_path, multipart: true %>
+  <%= form_tag admin_createarticle_path, multipart: true, id: "article-form" %>
   	<span class="mensaje"> <%= @mensaje %> </span>
     <div class="form-control">
       <p> Titulo:</br> <%= text_field_tag(:title ,nil, placeholder: "Max 50 caracteres", size:"50", id: "titulo-input") %> </p>
@@ -10,13 +10,15 @@
       <p> Descripción:</br> <%= text_area_tag(:description, nil, size:"40x20",maxlength:"400",placeholder: "Maximo 400 caracteres") %> </p>
     </div>
     <div class="form-control">
-      <p> Precio:</br> <%= text_field_tag(:price, nil,placeholder: "Ingrese entero") %></p>
+      <p> Precio:</br> <%= text_field_tag(:price, nil,placeholder: "Ingrese entero", id: "precio-input") %></p>
+    <span class="be-red"><p id="message-precio"></p></span>
     </div>
     <div class="form-control">
       <p> Categoría:</br> <%= select_tag "category", "<option>Smartwatch</option><option>Vino</option><option>Oferta</option>".html_safe %> </p>
     </div>
     <div class="form-control">
-     <p> Imagen:</br>  <%= file_field_tag "image" %></p>
+     <p> Imagen:</br>  <%= file_field_tag "image", id: "imagen-input" %></p>
+        <span class="be-red"><p id="message-imagen"></p></span>
     </div>
     <div class="form-control">
       <%= submit_tag("Crear producto") %>

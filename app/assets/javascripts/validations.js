@@ -6,6 +6,9 @@ $(document).on("page:change",function(){
     $("#edit-form").attr("onsubmit","return f4();");
     $("#pass-form").attr("onsubmit","return f5();");
     $("#passUser-form").attr("onsubmit","return f6();");
+    $("#article-form").attr("onsubmit","return f7();");
+    $("#articleEdit-form").attr("onsubmit","return f8();");
+
 
 
 
@@ -18,6 +21,10 @@ $(document).on("page:change",function(){
     $("#email-input").attr("oninput","CheckEmail()");
     $("#confirmation-input").attr("oninput","CheckConfirmation()");
     $("#titulo-input").attr("oninput","CheckTitulo()");
+    $("#precio-input").attr("oninput","CheckPrecio()");
+    $("#imagen-input").attr("oninput","CheckImagen()");
+    $("#precio2-input").attr("oninput","CheckPrecio2()");
+
 
 
 });
@@ -192,8 +199,82 @@ function CheckUsername() {
     }    
   }
 
+  function CheckPrecio() {
+    var field, message;
+    field = void 0;
+    message = void 0;
+    field = document.getElementById('precio-input').value;
+    if (!field) {
+      message = 'Debe ingresar un precio.';
+      document.getElementById('message-precio').innerHTML = message;
+      document.getElementById('precio-input').style.border = '2px solid red';
+      return false;
+    } else if (isInt(field)) {
+      document.getElementById('message-precio').innerHTML = '';
+      document.getElementById('precio-input').style.border = '2px solid green';
+      return true;
+    }
+    else {
+      message = 'Debe ser un numero entero el precio.';
+      document.getElementById('message-precio').innerHTML = message;
+      document.getElementById('precio-input').style.border = '2px solid red';
+      return false;
+    }    
+  }
 
+    function CheckPrecio2() {
+    var field, message;
+    field = void 0;
+    message = void 0;
+    field = document.getElementById('precio2-input').value;
+    if (field)
+    {
+      if (isInt(field)) {
+        document.getElementById('message-precio2').innerHTML = '';
+        document.getElementById('precio2-input').style.border = '2px solid green';
+        return true;
+      }
+      else
+      {
+        message = 'Debe ser un numero entero el precio.';
+        document.getElementById('message-precio2').innerHTML = message;
+        document.getElementById('precio2-input').style.border = '2px solid red';
+        return false;
+      }
+    } 
+    else {
+      document.getElementById('message-precio2').innerHTML = '';
+      document.getElementById('precio2-input').style.border = '2px solid lightgray';
 
+      return true;
+    }    
+  }
+
+  function isInt(n) {
+    if (!isNaN(parseFloat(n)) && isFinite(n)){
+      return n % 1 === 0;
+    }
+    else{
+      return false;
+    }
+  }
+
+  function CheckImagen() {
+    var field, message;
+    field = void 0;
+    message = void 0;
+    field = document.getElementById('imagen-input').value;
+    if (field == "") {
+      message = 'Debe ingresar una imagen.';
+      document.getElementById('message-imagen').innerHTML = message;
+      document.getElementById('imagen-input').style.border = '2px solid red';
+      return false;
+    } else {
+      document.getElementById('message-imagen').innerHTML = '';
+      document.getElementById('imagen-input').style.border = '2px solid green';
+      return true;
+    }    
+  }
 
 
   function f1() {
@@ -236,7 +317,7 @@ function CheckUsername() {
     }
   }
 
-    function f6() {
+  function f6() {
     if (CheckPassword2()  && CheckPassword() && CheckConfirmation ()){
       return true;
     } else {
@@ -244,6 +325,21 @@ function CheckUsername() {
     }
   }
 
+  function f7() {
+    if (CheckTitulo()  && CheckPrecio() && CheckImagen()){
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+    function f8() {
+    if (CheckPrecio2()){
+      return true;
+    } else {
+      return false;
+    }
+  }
 
 
 
