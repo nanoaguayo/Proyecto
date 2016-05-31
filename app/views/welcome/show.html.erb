@@ -16,7 +16,7 @@
 
 </section>
 
-<% if User.where(id: session[:user_id]).first.admin==1%>
+<% if User.where(id: session[:user_id]).first!=nil && User.where(id: session[:user_id]).first.admin==1%>
   <section class="edit-button">
     <%=link_to "Editar", edit_path(:product_id => @prod.id)%>
   </section>

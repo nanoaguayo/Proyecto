@@ -1,45 +1,59 @@
 $(document).on("page:change",function(){
 
 	
-	$("img").each(function(i,obj){
+	$(".image-cont a").each(function(i,obj){
 
-		
-		var alto;
-		var ancho;
-		var position;
-		var clone;
-
-		position = $(obj).position();
-		alto = $(obj).heigth;
-		ancho = $(obj).width;
+	
+	  var $prodLinks = $(obj);
 
 
-		clone = $(obj).clone();
-		$(clone).addClass("img-clon");
+	  var ShowProd = function(prodInfo) {
+	   
+	    $div = $("<div class='prod-preview'>" +
+	            "<h1 style='text-align:center'>"+ prodInfo.name +"</h1>" +
+	            "<p class='description'>"+ prodInfo.desc +"</p>" +
+	            "<a href='"+ prodInfo.url + "' style='object-position:center'>Ir al producto</a>" +
+	        "</div>");
 
-		$(obj).mouseenter(function(e){
+	    $(".photo").css("z-index",1);
 
-			$("img-clon").animate({height:alto,width:ancho},200,function(){$(this).remove();});
-			$(".image_cont").css("z-index",1);
-			$(clone).css("z-index",1000).css("top",position.top).css("left",position.left).css("border","2px solid orange");
+	    var position = $(obj).parent().position();
 
-			$(clone).appendTo(".catalogo").css("position","absolute").animate({
-				height:alto,
-				width:ancho
-				},200,function(){
+	
+	    $div.appendTo(".catalogo");
+	    $div.offset({top: position.top,left: position.left});
+	    $(".prod-preview").css("z-index",1000);
+	    $(".prod-preview").css("width","30%").css("background-color","gray");
+	    $(".prod-preview").mouseleave(function(){$(".prod-preview").remove();});
+	  }
 
-					$(obj).mouseleave(function(e){
 
-						$(clone).animate({
-							height: alto,
-							width: ancho
+	  $prodLinks.on('mouseenter',function(ev){
 
-						},10,function(){$(clone).remove();});
-					});
+	  	$(".prod-preview").remove();
+	    ev.preventDefault();
 
-			});//mouseout
+	    var $link = $(this);
 
-		});//mouseover
+	    //alert($link.data());
+
+	    var sourceUrl = $link.data('purl');
+	    
+
+	    $.ajax({
+	      
+	      "url": sourceUrl,
+	      "dataType": "json",
+	      "success": function(data, ts, jq) {
+	        console.log("success: ", data)
+	        ShowProd(data);
+	      },
+	      "error": function(jq, st, er) {
+	        console.log("ERROR :(", jq, st, er);
+	      }
+	    });
+
+	  });
 
 
 	});//function 4 each

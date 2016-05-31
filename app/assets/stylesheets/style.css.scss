@@ -527,11 +527,14 @@ img{
 }
 
 .foto1{
-  margin: 0 40%;
+  object-position: center;
   max-height: 250px;
 
 }
 .edit-button{
   font-size: large;
 
+}
+.prod-preview{
+  border: 2px solid black;
 }

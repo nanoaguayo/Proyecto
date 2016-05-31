@@ -4,7 +4,7 @@
 		<% if p.category=="Oferta" then %>
 			<article class="photo2">
 				<div class="image-cont">
-					<a href=""><%=image_tag p.image%></a>
+					<%=link_to (image_tag asset_path(p.image)), show_path(:product_id => p.id), :data => {:purl=> prod_path(p, format: 'json')}%>
 				</div>
 				<div class="text-cont">
 			        <span class="description"><%= p.title %></span>

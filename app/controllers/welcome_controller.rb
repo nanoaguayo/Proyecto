@@ -16,6 +16,30 @@ def smartwatch
 	@productos = Product.all
 end
 
+def json_preview
+
+	@p = Product.find(params[:id])
+	puts @p.title
+	
+	respond_to do |format|
+		
+     format.json do
+
+        @hash_prod = {
+          name: @p.title,
+          desc: @p.description,
+          url: show_path(:product_id => @p.id),
+          price: @p.price,
+          image: @p.image
+        }
+
+        render json: @hash_prod
+      end
+
+    end
+
+end
+
 def show
 
 	id = params[:product_id]
