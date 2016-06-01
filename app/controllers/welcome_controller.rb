@@ -1,7 +1,19 @@
 class WelcomeController < ApplicationController
 
 def index
-	@productos = Product.all
+	@productos = Product.all	
+	@cont=0
+end
+def index2
+	prodnum = Product.all.length
+	@productos = Array.new()
+	for i in 0..3
+
+		if Product.all[i]!=nil then
+			@productos.push(Product.all[i])
+		end
+	end
+	
 end
 
 def vinos
@@ -15,11 +27,27 @@ end
 def smartwatch
 	@productos = Product.all
 end
+def page
+	n = params[:n]
 
+	id1 = Product.all[4*n].id
+	id2 = Product.all[4*n+1].id
+	id3 = Product.all[4*n+2].id
+	id4 = Product.all[4*n+3].id
+
+	@hash_prods = {
+          id1: id1,
+          id2: id2,
+          id3: id3,
+          id4: id4     
+        }
+
+    render json: @hash_prods
+
+end
 def json_preview
 
 	@p = Product.find(params[:id])
-	puts @p.title
 	
 	respond_to do |format|
 		

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   post 'makeedition' => 'welcome#makeEdition'
   get 'delete' => 'welcome#delete'
   get 'products/:id' => 'welcome#json_preview', as: 'prod'
+  get 'page/:n' =>'welcome#page'
 
 
   get 'sessions/login' => 'sessions#login'

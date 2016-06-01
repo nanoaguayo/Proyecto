@@ -1,9 +1,9 @@
 <h1>Catalogo</h1>
-<div><%=@messag%></div>
+<div><%=@message%></div>
 <section class="catalogo">
 <% @productos.each do |p| %>
-	
-		<article class="photo">
+	<%if @cont<4 then%>
+		<article class="photo" id="<%=p.id%>">
 			<div class="image-cont">
 				<%=link_to (image_tag asset_path(p.image)), show_path(:product_id => p.id), :data => {:purl=> prod_path(p, format: 'json')}%>
 			</div>
@@ -13,5 +13,20 @@
 		        <span class="description">Categoria: <%= p.category %></span>
 		    </div>
 		</article>
+	<%else%>
+		<article class="photo hide" id="<%=p.id%>">
+			<div class="image-cont">
+				<%=link_to (image_tag asset_path(p.image)), show_path(:product_id => p.id), :data => {:purl=> prod_path(p, format: 'json')}%>
+			</div>
+			<div class="text-cont">
+		        <span class="description"><%= p.title %></span>
+		        <span class="price">$<%=p.price%></span>
+		        <span class="description">Categoria: <%= p.category %></span>
+		    </div>
+		</article>
+	<%end%>
 <%end%>
 </section>
+<div class="btn-container">
+	<a class="page-btn" href="#">1</a>
+</div>
